@@ -4,14 +4,13 @@ import turtle
 from dialogs import *
 import pygame
 
-print('hello world!')
+
 def move_turtle(x,y,object):
     
     object.penup()
     object.goto(x,y)
     object.pendown()
-a = '123'
-origin = 'https://github.com/SerjRoman/First-Repo.git'
+
 def write_text_turtle(object,text,font_size):
     object.write(
     text, move=False,
