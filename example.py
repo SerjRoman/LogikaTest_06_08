@@ -10,7 +10,7 @@ def move_turtle(x,y,object):
     object.penup()
     object.goto(x,y)
     object.pendown()
-
+origin = 'https://github.com/SerjRoman/LogikaTest_06_08.git'
 def write_text_turtle(object,text,font_size):
     object.write(
     text, move=False,
